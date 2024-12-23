@@ -1,0 +1,371 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+        <header class="header">
+            <div class="menu container">
+                <a href="#" class="logo">Logo</a>
+                <input type="checkbox" id="menu"/>
+                <label for="menu">
+                    <img src="images/menu.png" class="menu-icono" alt="">
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">inicio</a></li>
+                        <li><a href="#services  ">servicio</a></li>
+                        <li><a href="#lista-1">producto</a></li>
+                        <li><a href="#">contacto</a></li>
+                        
+                    </ul>
+                </nav>
+                <div>
+                    <ul>
+                        <li class="submenu">
+                            <img src="images/car.svg" id="img-carrito" alt="">
+                            <div id="carrito">
+                                <table id="lista-carrito">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="lista-carrito"></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" class="btn-2"> Vaciar Carrito</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-buttons">
+                    <a href="register.html" class="btn btn-primary rounded-btn">Registrarse</a>
+                    <a href="login.html" class="btn btn-secondary rounded-btn">Login</a>
+                </div>
+            </div>
+            <div class="header-content-container">
+                <div class="header-txt">
+                    <h1>MAKY SALUDABLE</h1> 
+                    <p>ALGUIEN EN ALGUN LUGAR ESTA MUERINDO DE LA RISA PERO TU NO LO SABES O SI, MONGOLITO</p>
+                    <a href="#" class="btn-1">seccion menu</a>            
+                </div>   
+            </div>
+        </header>
+        <section class="icons">
+            <div class="icon">
+                <img src="images/i1.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i2.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i3.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i4.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i5.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i6.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i7.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i8.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i9.svg" alt="">
+        
+            </div>
+            <div class="icon">
+                <img src="images/i10.svg" alt="">
+        
+            </div>
+
+        
+        </section>
+
+        <section class="products container" id="lista-1">
+            <h2>Pizzas</h2>
+
+            <div class="products-content">
+            <div class="product">
+                <img src="images/pi1.png" alt="">
+                <div class="product-txt">
+                    <h3>1</h3>
+                    <p>calidad premium</p>
+                    <p class="precio">S/200</p>
+                    
+                    <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3> </button>
+                
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product">
+                <img src="images/pi2.png" alt="">
+                <div class="product-txt">
+                    <h3>2</h3>
+                    <p>calidad premium</p>
+                    <p class="precio">S/200</p>
+                    <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product">
+                <img src="images/pi3.png" alt="">
+                <div class="product-txt">
+                    <h3>3</h3>
+                    <p>calidad premium</p>
+                    <p class="precio">S/200</p>
+                    <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product">
+                <img src="images/pi4.png" alt="">
+                <div class="product-txt">
+                    <h3>4</h3>
+                    <p>calidad premium</p>
+                    <p class="precio">S/200</p>
+                    <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+                </div>
+            </div>
+            <!-- Producto 5 -->
+            <div class="product">
+                <img src="images/pi5.png" alt="">
+                <div class="product-txt">
+                    <h3>5</h3>
+                    <p>calidad premium</p>
+                    <p class="precio">S/200</p>
+                    <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3>
+                    </button>
+                </div>
+            </div>
+    </div>>
+            
+        </section>
+
+
+    <section class="products container" id="lista-2">
+        <h2>Enlasadas</h2>
+        <div class="products-content">
+        
+        <!-- Producto 1 -->
+        <div class="product">
+            <img src="images/e1.png" alt="">
+            <div class="product-txt">
+                <h3>Ensaladas</h3>
+                <p>calidad premium</p>
+                <p class="precio">S/200</p>
+                <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3> </button>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product">
+            <img src="images/e2.png" alt="">
+            <div class="product-txt">
+                <h3>Ensaladas</h3>
+                <p>calidad premium</p>
+                <p class="precio">S/200</p>
+                <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product">
+            <img src="images/e3.png" alt="">
+            <div class="product-txt">
+                <h3>Ensaladas</h3>
+                <p>calidad premium</p>
+                <p class="precio">S/200</p>
+                <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product">
+            <img src="images/e4.png" alt="">
+            <div class="product-txt">
+                <h3>Ensaladas</h3>
+                <p>calidad premium</p>
+                <p class="precio">S/200</p>
+                <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+            </div>
+        </div>
+        <!-- Producto 5 -->
+        <div class="product">
+            <img src="images/e5.png" alt="">
+            <div class="product-txt">
+                <h3>Ensaladas</h3>
+                <p>calidad premium</p>
+                <p class="precio">S/200</p>
+                <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+            </div>
+        </div> 
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h2>Servicios</h2>
+    <div class="services-content container">
+        <div class="service">
+    <h2>Comida</h2>
+    <hr>
+    <p>
+        Cuando el usuario hace clic en "Agregar al carrito",
+        el botón es reemplazado por un contador que permite 
+        ajustar la cantidad. Si la cantidad se reduce a 1 y el usuario 
+        presiona el botón de restar, el contador vuelve a ser un botón de 
+        "Agregar al carrito". 
+        Esto se repite para cada producto en la lista.
+    </p>
+    </div>
+    <div class="service">
+        <h2>Comida</h2>
+        <hr>
+        <p>
+        Cuando el usuario hace clic en "Agregar al carrito",
+            el botón es reemplazado por un contador que permite 
+            ajustar la cantidad. Si la cantidad se reduce a 1 y el usuario 
+            presiona el botón de restar, el contador vuelve a ser un botón de 
+            "Agregar al carrito". 
+        Esto se repite para cada producto en la lista.
+        </p>
+    </div>
+    <div class="service">
+        <h2>Comida</h2>
+        <hr>
+        <p>
+        Cuando el usuario hace clic en "Agregar al carrito",
+            el botón es reemplazado por un contador que permite 
+            ajustar la cantidad. Si la cantidad se reduce a 1 y el usuario 
+            presiona el botón de restar, el contador vuelve a ser un botón de 
+            "Agregar al carrito". 
+        Esto se repite para cada producto en la lista.
+        </p>
+    </div>
+    <div class="service">
+        <h2>Comida</h2>
+        <hr>
+        <p>
+        Cuando el usuario hace clic en "Agregar al carrito",
+            el botón es reemplazado por un contador que permite 
+            ajustar la cantidad. Si la cantidad se reduce a 1 y el usuario 
+            presiona el botón de restar, el contador vuelve a ser un botón de 
+            "Agregar al carrito". 
+        Esto se repite para cada producto en la lista.
+        </p>
+    </div>
+    <div class="service">
+        <h2>Comida</h2>
+        <hr>
+        <p>
+        Cuando el usuario hace clic en "Agregar al carrito",
+            el botón es reemplazado por un contador que permite 
+            ajustar la cantidad. Si la cantidad se reduce a 1 y el usuario 
+            presiona el botón de restar, el contador vuelve a ser un botón de 
+            "Agregar al carrito". 
+        Esto se repite para cada producto en la lista.
+        </p>
+    </div>
+    </div>
+    </section>
+    <footer class="footer container">
+        <div class="link">
+            <h3>lorem</h3>
+            <ul>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+            </ul>
+
+        </div>
+        <div class="link">
+            <h3>lorem</h3>
+            <ul>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+            </ul>
+
+        </div>
+        <div class="link">
+            <h3>lorem</h3>
+            <ul>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+            </ul>
+
+        </div>
+        <div class="link">
+            <h3>lorem</h3>
+            <ul>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+                <li><a href="#">lorem</a></li>
+            </ul>
+
+        </div>
+
+    </footer>
+    <script>
+        // Función para cambiar al contador
+        function cambiarABotonContador(element) {
+            const boton = element;
+            boton.outerHTML = `
+                <div class="contador" id="contador-container">
+                    <button onclick="actualizarContador(-1, this)">-</button>
+                    <span id="contador">1</span>
+                    <button onclick="actualizarContador(1, this)">+</button>
+                </div>
+            `;
+        }
+
+        // Función para actualizar el valor del contador
+        function actualizarContador(incremento, element) {
+            const contador = element.parentElement.querySelector("#contador");
+            let valorActual = parseInt(contador.innerText);
+            valorActual += incremento;
+
+            // Si llega a 1 y se presiona "-", vuelve al botón inicial
+            if (valorActual <= 1 && incremento < 0) {
+                const contadorContainer = element.parentElement;
+                contadorContainer.outerHTML = `
+                    <button class="boton-anadir" onclick="cambiarABotonContador(this)"><h3>AÑADIR</h3></button>
+                `;
+            } else if (valorActual > 1) {
+                contador.innerText = valorActual;
+            }
+        }
+    </script>   
+        <script src="script.js"></script>
+
+    </body>
+    </html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación - Negocio de Comida</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            padding: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background: white;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .form-container.sign-up {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: .5s ease-in-out;
+        }
+
+        .form-container.sign-up.active {
+            pointer-events: initial;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .form-container.sign-in {
+            pointer-events: initial;
+            opacity: 1;
+            transform: translateX(0);
+            transition: .5s ease-in-out;
+        }
+
+        .form-container.sign-in.active {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .left-container, .right-container {
+            flex: 1;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        .left-container {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-container {
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            background: transparent;
+        }
+
+        .input-field label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 16px;
+            color: #999;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+
+        .input-field input:focus + label,
+        .input-field input:valid + label {
+            top: -12px;
+            font-size: 13px;
+            color: #43cea2;
+        }
+
+        .input-field input:focus {
+            border-bottom-color: #43cea2;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 2px solid white;
+            margin-top: 20px;
+        }
+
+        .right-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .right-container p {
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                height: auto;
+                min-height: 600px;
+            }
+
+            .form-container {
+                flex-direction: column;
+            }
+
+            .left-container, .right-container {
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sign In Form -->
+        <div class="form-container sign-in">
+            <div class="left-container">
+                <h1 class="title">Iniciar Sesión</h1>
+                <form id="signInForm">
+                    <div class="input-field">
+                        <input type="email" id="signInEmail" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signInPassword" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <button type="submit" class="btn">Iniciar Sesión</button>
+                </form>
+            </div>
+            <div class="right-container">
+                <h2>¡Bienvenido de nuevo!</h2>
+                <p>¿Aún no tienes una cuenta? Únete a nosotros y comienza tu viaje saludable.</p>
+                <button class="btn ghost" id="signUpButton">Registrarse</button>
+            </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up active">
+            <div class="left-container">
+                <h1 class="title">Crear Cuenta</h1>
+                <form id="signUpForm">
+                    <div class="input-field">
+                        <input type="text" id="signUpName" required>
+                        <label>Nombre Completo</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="signUpEmail" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" id="signUpPhone" required>
+                        <label>Teléfono</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signUpPassword" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <button type="submit" class="btn">Registrarse</button>
+                </form>
+            </div>
+            <div class="right-container">
+                <h2>¡Hola, amigo!</h2>
+                <p>¿Ya tienes una cuenta? Inicia sesión para acceder a tu perfil.</p>
+                <button class="btn ghost" id="signInButton">Iniciar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between sign in and sign up forms
+        const signUpButton = document.getElementById('signUpButton');
+        const signInButton = document.getElementById('signInButton');
+        const signUpForm = document.querySelector('.sign-up');
+        const signInForm = document.querySelector('.sign-in');
+
+        signUpButton.addEventListener('click', () => {
+            signUpForm.classList.add('active');
+            signInForm.classList.add('active');
+        });
+
+        signInButton.addEventListener('click', () => {
+            signUpForm.classList.remove('active');
+            signInForm.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
